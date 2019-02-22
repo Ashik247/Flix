@@ -197,7 +197,6 @@
         <!--Movie Grid Details View Controller-->
         <scene sceneID="ln4-WW-seD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f0j-JD-CpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="VNm-Gd-IIh" customClass="MovieGridDetailsViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ck-oK-g60">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -207,9 +206,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Agg-HO-oln">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Agg-HO-oln">
                                 <rect key="frame" x="20" y="217" width="137" height="233"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oVq-VQ-JRa" appends="YES" id="77v-5t-daW"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4H-4e-F3J">
                                 <rect key="frame" x="165" y="281" width="229" height="86"/>
@@ -236,8 +239,43 @@
                         <outlet property="titleLabel" destination="L4H-4e-F3J" id="O46-ed-PI9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0j-JD-CpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oVq-VQ-JRa">
+                    <connections>
+                        <segue destination="ACZ-eF-hcR" kind="presentation" identifier="trailerSegue" id="0MZ-zX-fU5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="909" y="2107"/>
+            <point key="canvasLocation" x="908.69565217391312" y="2106.6964285714284"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="7PO-tT-gSh">
+            <objects>
+                <viewController id="ACZ-eF-hcR" customClass="WebViewController" customModule="Flix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7HO-t1-ORn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFu-Gb-4Kc">
+                                <rect key="frame" x="0.0" y="345" width="414" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zev-6z-D3A"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="mFu-Gb-4Kc" id="JsX-P4-k5E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tb-Mq-ws6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908.69565217391312" y="2781.6964285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t48-4m-re1">

@@ -30,7 +30,7 @@ class MovieDetailViewController: UIViewController {
         let backDropPath = movie["backdrop_path"] as! String
         let posterUrl = URL(string: baseUrl + posterPath)
         let backDropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backDropPath)
-        
+
         posterView.af_setImage(withURL: posterUrl!)
         backDropView.af_setImage(withURL: backDropUrl!)
     }
