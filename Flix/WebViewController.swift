@@ -51,7 +51,7 @@ class WebViewController: UIViewController, WKUIDelegate  {
         dispatchGroup.enter()
         let movieId = movie["id"]
         print (movieId!)
-        run(after: 5) {
+        run(after: 2) {
             let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieId!)/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
