@@ -35,8 +35,6 @@ class WebViewController: UIViewController, WKUIDelegate  {
         webView.uiDelegate = self
 
             getVideo()
-
-
         
     }
     
